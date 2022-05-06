@@ -148,7 +148,7 @@ class App extends Component {
       const DeFiTokenContract = new web3.eth.Contract(IndexToken.abi, "0x6E49456f284e3da7f1515eEE120E2706cab69fD5");
       this.setState({ SwapContract, DeFiTokenContract, NFTPortfolioContract, NFTTokenContract});
     } else if (chainIdDec == "97") {
-      const SwapContract2 = new web3.eth.Contract(IndexSwap2.abi, "0x3b0b0a0F76316c8067a26E684767A189d8772D55");
+      const SwapContract2 = new web3.eth.Contract(IndexSwap2.abi, "0xfb83FDEF18ab899E9c4C3a59B99cb7600d63D987");
       const NFTPortfolioContract2 = new web3.eth.Contract(NFTSwap2.abi, "0x0f444D6F25d2F8Fd0639eEc68ce4AA1F03FF6F4F");
       const NFTTokenContract2 = new web3.eth.Contract(IndexToken2.abi, "0x817ea2A5Fd281d15CA70B05abB5E094356C42996");
       const DeFiTokenContract2 = new web3.eth.Contract(IndexToken2.abi, "0xF70538622598232a95B1EC1914Fc878d28EBAE68");
@@ -396,7 +396,7 @@ class App extends Component {
     var withdrawAmountInWei = web3.utils.toWei(withdrawAmt, 'ether');
     var sAmount = withdrawAmountInWei.toString();
 
-    await this.state.SwapContract2.methods.approve("0x3b0b0a0F76316c8067a26E684767A189d8772D55", "115792089237316195423570985008687907853269984665640564039457584007913129639935")
+    await this.state.SwapContract2.methods.approve("0xfb83FDEF18ab899E9c4C3a59B99cb7600d63D987", "115792089237316195423570985008687907853269984665640564039457584007913129639935")
     .send({from: this.state.account});
 
     await this.state.SwapContract2.methods.withdrawFromFundNew(sAmount
